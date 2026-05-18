@@ -313,3 +313,23 @@ footer a:hover {
   font-weight: 500;
   transition: all 0.2s ease;
 }
+
+/* Append */
+#appendBtn {
+  background: #3b82f6;
+  color: white;
+}
+
+#appendBtn:hover {
+  background: #2563eb;
+}
+
+/* Replace */
+#replaceBtn {
+  background: #ef4444;
+  color: white;
+}
+
+#replaceBtn:hover {
+  background: #dc2626;
+}
