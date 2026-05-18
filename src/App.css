@@ -49,3 +49,140 @@ footer a {
     display: flex;
     flex-direction: column;
 }
+.mainLabel {
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.homePageLogo {
+    height: 80px;
+    margin-bottom: 30px;
+}
+
+.inputBox {
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    margin-bottom: 14px;
+    background: #eee;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn {
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.copyBtn {
+    background-color: var(--copy-color);
+    color: white;
+}
+
+.copyBtn:hover {
+    background-color: var(--create-color);
+    color: var(--copy-text);
+}
+
+.joinBtn {
+    background: var(--join-color);
+    width: 100px;
+    margin-left: auto;
+}
+
+.joinBtn:hover {
+    background: var(--join-hover-color);
+    color: white;
+}
+
+.leaveBtn {
+    background: var(--leave-color);
+    font-weight: bold;
+    color: white;
+}
+
+.leaveBtn:hover {
+    background: var(--leave-color);
+    color: var(--copy-text);
+    transition: all 0.2s ease-in-out;
+}
+
+.createInfo {
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.createNewBtn {
+    color: #40be70;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    font-weight: 500 !important;
+}
+
+.createNewBtn:hover {
+    color: #4aed88;
+    border-color: #4aed88;
+}
+
+footer a:hover {
+    color: var(--create-color);
+}
+
+.mainWrap {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    height: 100vh;
+}
+
+@media screen and (min-width: 480px) {
+    .mainWrap {
+        display: grid;
+        grid-template-columns: 230px 1fr;
+        height: 100vh;
+    }
+}
+
+.aside {
+    background: #1c1e29;
+    padding: 16px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.asideInner {
+    flex: 1;
+}
+
+.clientsList {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.client {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+.userName {
+    margin-top: 10px;
+}
+
+.logo {
+    border-bottom: 1px solid #424242;
+    padding-bottom: 10px;
+}
+
+.logoImage {
+    height: 60px;
+}
