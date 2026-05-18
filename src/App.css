@@ -333,3 +333,25 @@ footer a:hover {
 #replaceBtn:hover {
   background: #dc2626;
 }
+
+/* Cancel */
+#cancelBtn {
+  background: transparent;
+  color: #cdd6f4;
+  border: 1px solid #45475a;
+}
+
+#cancelBtn:hover {
+  background: #313244;
+}
+
+
+@media screen and (min-width: 480px) {
+    .CodeMirror {
+        min-height: calc(100vh - 20px);
+        width: calc(100vw - 230px);
+        font-size: 16px;
+        line-height: 1.6;
+        padding-top: 20px;
+    }
+}
