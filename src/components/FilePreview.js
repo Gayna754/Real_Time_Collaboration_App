@@ -18,6 +18,7 @@ const FilePreview = ({setFilePreview, fileContent, resetFileInput, onAppend, onR
                 <div>
                     <button id="appendBtn" onClick={onAppend}>Append</button>
                     <button id="replaceBtn" onClick={onReplace}>Replace</button>
+                    <button id="cancelBtn" onClick={() => handleCancel()}>Cancel</button>
                 </div>
             </div>
         </div>
