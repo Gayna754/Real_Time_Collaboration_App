@@ -17,7 +17,7 @@ const FilePreview = ({setFilePreview, fileContent, resetFileInput, onAppend, onR
                 </pre>
                 <div>
                     <button id="appendBtn" onClick={onAppend}>Append</button>
-                    
+                    <button id="replaceBtn" onClick={onReplace}>Replace</button>
                 </div>
             </div>
         </div>
