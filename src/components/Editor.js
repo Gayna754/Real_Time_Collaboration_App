@@ -147,7 +147,25 @@ const Editor = React.forwardRef(({ socketRef, roomId, onCodeChange }, ref) => {
     init();
   }, [lang]);
 
+useEffect(() => {
+    if (editorRef.current) {
+      editorRef.current.setOption("theme", editorTheme);
+    }
+  }, [editorTheme]);
 
+  useEffect(() => {
+    if (socketRef.current) {
+      socketRef.current.on(ACTIONS.CODE_CHANGE, ({ code }) => {
+        if (code !== null) {
+          editorRef.current.setValue(code);
+        }
+      });
+    }
+
+    return () => {
+      socketRef.current.off(ACTIONS.CODE_CHANGE);
+    };
+  }, [socketRef.current]);
 
 
   
