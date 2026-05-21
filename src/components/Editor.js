@@ -118,6 +118,35 @@ const Editor = React.forwardRef(({ socketRef, roomId, onCodeChange }, ref) => {
     },
   }));
 
+    useEffect(() => {
+    async function init() {
+      editorRef.current = Codemirror.fromTextArea(
+        document.getElementById("realtimeEditor"),
+        {
+          mode: { name: lang },
+          theme: editorTheme,
+          autoCloseTags: true,
+          autoCloseBrackets: true,
+          lineNumbers: true,
+        }
+      );
+
+      editorRef.current.on("change", (instance, changes) => {
+        const { origin } = changes;
+        const code = instance.getValue();
+        console.log("main:editor: ", code);
+        onCodeChange(code);
+        if (origin !== "setValue") {
+          socketRef.current.emit(ACTIONS.CODE_CHANGE, {
+            roomId,
+            code,
+          });
+        }
+      });
+    }
+    init();
+  }, [lang]);
+
 
 
 
