@@ -125,3 +125,14 @@ useEffect(() => {
       code: newCode,
     });
   };
+  const handleAppendCode = () => {
+  const currentCode = codeRef.current || "";
+
+  const appendedCode = currentCode
+    ? `${currentCode}\n\n${fileContent}`
+    : fileContent;
+
+    updateEditorCode(appendedCode);
+    setFilePreview(false);
+    resetFileInput();
+  };
