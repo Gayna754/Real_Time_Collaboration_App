@@ -98,3 +98,22 @@ useEffect(() => {
   if (!location.state) {
     return <Navigate to="/" />;
   }
+  function handleFileUpload(event) {
+    console.log("hello");
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const fileContent = e.target.result;
+        setFileContent(fileContent);
+        setFilePreview(true);
+      };
+      reader.readAsText(file);
+    }
+  }
+  const resetFileInput = () => {
+    if (fileInputRef.current) {
+    fileInputRef.current.value = "";
+    }
+  };
+
