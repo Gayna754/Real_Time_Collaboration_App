@@ -80,3 +80,21 @@ useEffect(() => {
       socketRef.current.disconnect();
     };
   }, []);}
+
+  async function copyRoomId() {
+    try {
+      await navigator.clipboard.writeText(roomId);
+      toast.success("Room ID has been copied to clipboard");
+    } catch (err) {
+      toast.error("Could not copy the Room ID");
+      console.error(err);
+    }
+  }
+
+  function leaveRoom() {
+    reactNavigator("/");
+  }
+
+  if (!location.state) {
+    return <Navigate to="/" />;
+  }
