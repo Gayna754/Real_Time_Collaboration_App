@@ -117,3 +117,11 @@ useEffect(() => {
     }
   };
 
+  const updateEditorCode = (newCode) => {
+    editorInstanceRef.current?.setCode(newCode);
+    codeRef.current = newCode;
+    socketRef.current.emit(ACTIONS.CODE_CHANGE, {
+      roomId,
+      code: newCode,
+    });
+  };
