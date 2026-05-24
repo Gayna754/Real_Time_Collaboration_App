@@ -141,4 +141,11 @@ useEffect(() => {
     updateEditorCode(fileContent);
     setFilePreview(false);
     resetFileInput();
+    
   };
+
+  export default EditorPage;
+
+
+
+ 
