@@ -136,3 +136,9 @@ useEffect(() => {
     setFilePreview(false);
     resetFileInput();
   };
+
+  const handleReplaceCode = () => {
+    updateEditorCode(fileContent);
+    setFilePreview(false);
+    resetFileInput();
+  };
