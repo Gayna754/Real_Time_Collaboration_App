@@ -70,3 +70,6 @@ app.get('/', (req, res) => {
     res.setHeader('Content-Type', 'text/html');
     res.send(htmlContent);
 });
+
+const PORT = process.env.SERVER_PORT || 5000;
+server.listen(PORT, () => console.log(`Listening on port ${PORT}`));
