@@ -14,3 +14,16 @@ app.use(express.static('build'));
 app.use((req, res, next) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
+
+const userSocketMap = {};
+function getAllConnectedClients(roomId) {
+    // Map
+    return Array.from(io.sockets.adapter.rooms.get(roomId) || []).map(
+        (socketId) => {
+            return {
+                socketId,
+                username: userSocketMap[socketId],
+            };
+        }
+    );
+}
